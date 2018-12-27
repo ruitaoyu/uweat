@@ -21,7 +21,7 @@
         app:srcCompat="@mipmap/dog" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.463" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
