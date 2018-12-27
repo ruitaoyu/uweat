@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorUWPurple">#4b2e83</color>
+    <color name="colorUWGold">#e8e3d3</color>
+    <color name="colorUWDarkGold">#85754d</color>
+    <color name="colorUWBlack">#000000</color>
+    <color name="colorUWWhite">#ffffff</color>
+    <color name="colorUWGrey">#D3D3D3</color>
+</resources>
