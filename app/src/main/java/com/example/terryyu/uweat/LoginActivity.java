@@ -44,31 +44,42 @@ public class LoginActivity extends AppCompatActivity {
 
         //AddData();
 
-        viewAll();
+        login();
 
 
     }
 
-    public void viewAll() {
+    public void login() {
         signIn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Cursor res = myDb.getAllData();
                         if(res.getCount() == 0) {
-                            showMsg("Error", "Nothing found!");
+                            showMsg("Error", "No Account In Database!");
                             return;
                         }
 
+                        String currentEmail = myEmail.getText().toString();
+                        String currentPW = myPasswod.getText().toString();
+
                         StringBuffer buffer = new StringBuffer();
                         while(res.moveToNext()) {
-                            buffer.append("ID : " + res.getString(0) + "\n"
-                            + "email : " + res.getString(1)+ "\n"
-                                    + "pw : " + res.getString(2)+ "\n\n");
+
+                            if (currentEmail.equals(res.getString(1))
+                            && currentPW.equals(res.getString(2)) ){
+                                Intent intent = new Intent(LoginActivity.this, SchoolListActivity.class);
+                                startActivity(intent);
+                                return;
+                            } else if(currentEmail.equals(res.getString(1))){
+                                Toast.makeText(LoginActivity.this,"Wrong Password, please enter again", Toast.LENGTH_LONG).show();
+                                return;
+                            }
                         }
 
+                        Toast.makeText(LoginActivity.this,"Cannot found account", Toast.LENGTH_LONG).show();
                         // show all the data
-                        showMsg("Data", buffer.toString());
+                        //showMsg("Data", buffer.toString());
                     }
                 }
         );
