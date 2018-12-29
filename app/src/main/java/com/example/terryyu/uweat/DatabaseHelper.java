@@ -50,4 +50,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from " + TABLE_NAME,null);
         return res;
     }
+
+//    public Cursor checkEmail(String email){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor res = db.rawQuery("select * from " + TABLE_NAME + "WHERE  EMAIL =" + email,null);
+//
+//        return res;
+//    }
 }
