@@ -17,7 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".SchoolListActivity"></activity>
+        <activity android:name=".SchoolListActivity" />
+        <activity android:name=".AdminPanel" />
+        <activity
+            android:name=".seattle_campus"
+            android:label="@string/title_activity_seattle_campus"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
