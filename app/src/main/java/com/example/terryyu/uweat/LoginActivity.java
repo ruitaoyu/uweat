@@ -64,19 +64,27 @@ public class LoginActivity extends AppCompatActivity {
                         String currentPW = myPasswod.getText().toString();
 
                         StringBuffer buffer = new StringBuffer();
-                        while(res.moveToNext()) {
 
-                            if (currentEmail.equals(res.getString(1))
-                            && currentPW.equals(res.getString(2)) ){
-                                Intent intent = new Intent(LoginActivity.this, SchoolListActivity.class);
-                                startActivity(intent);
-                                return;
-                            } else if(currentEmail.equals(res.getString(1))){
-                                Toast.makeText(LoginActivity.this,"Wrong Password, please enter again", Toast.LENGTH_LONG).show();
-                                return;
+                        if(currentEmail.equals("admin")){
+                            Intent intent = new Intent(LoginActivity.this, AdminPanel.class);
+                            startActivity(intent);
+
+                        } else {
+                            while (res.moveToNext()) {
+
+//
+                                if (currentEmail.equals(res.getString(1))
+                                        && currentPW.equals(res.getString(2))) {
+                                    Intent intent = new Intent(LoginActivity.this, SchoolListActivity.class);
+                                    startActivity(intent);
+                                    return;
+                                } else if (currentEmail.equals(res.getString(1))) {
+                                    Toast.makeText(LoginActivity.this, "Wrong Password, please enter again", Toast.LENGTH_LONG).show();
+
+// return;
+                                }
                             }
                         }
-
                         Toast.makeText(LoginActivity.this,"Cannot found account", Toast.LENGTH_LONG).show();
                         // show all the data
                         //showMsg("Data", buffer.toString());
